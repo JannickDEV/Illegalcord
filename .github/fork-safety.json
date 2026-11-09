@@ -31,7 +31,8 @@
         "FORK_NOTES.md",
         ".github/fork-safety.json",
         "scripts/forkSafetyCheck.mjs",
-        ".github/workflows/build.yml"
+        ".github/workflows/build.yml",
+        "browser/VencordNativeStub.ts"
     ],
     "sensitivePaths": [
         "src/main/**",

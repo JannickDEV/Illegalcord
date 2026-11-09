@@ -34,6 +34,7 @@ where they still apply. The same list is `forkOwnedFiles` in `.github/fork-safet
 - `README.md`, `README_IT.md`, `SECURITY.md`: rewritten for this curated build. Upstream's describe the full Illegalcord.
 - `FORK_NOTES.md`, `.github/fork-safety.json`, `scripts/forkSafetyCheck.mjs`: the fork's own tooling
 - `.github/workflows/build.yml`: release condition and manual trigger, see below
+- `browser/VencordNativeStub.ts`: the browser build reports `JannickDEV/Illegalcord` as its repository (Changelog page)
 
 ## Other changes
 - `.github/workflows/build.yml`: the release upload runs unless the repository variable `ACT` is `true`.

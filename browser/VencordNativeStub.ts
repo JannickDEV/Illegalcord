@@ -73,7 +73,8 @@ window.VencordNative = {
     },
 
     updater: {
-        getRepo: async () => ({ ok: true, value: "https://github.com/Equicord/Equicord" }),
+        // JannickDEV fork: the browser build is published from this repository (loaded by the JannickDEV Dorion build)
+        getRepo: async () => ({ ok: true, value: "https://github.com/JannickDEV/Illegalcord" }),
         getUpdates: async () => ({ ok: true, value: [] }),
         fetchUpdate: async () => ({ ok: true, value: false }),
         applyUpdate: async () => ({ ok: true, value: true }),
