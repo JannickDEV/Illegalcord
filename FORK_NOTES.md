@@ -32,11 +32,18 @@ Removed after a source review (2026-11-09, upstream commit `6f861c0`).
 
 ## Updating from upstream
 
+A daily scheduled Claude session does this automatically. It merges only when the review is clean, and
+otherwise sends you a notification and pushes nothing. To do it by hand:
+
 ```bash
 git remote add upstream https://github.com/ImHisako/Illegalcord.git
 git fetch upstream
+node scripts/forkSafetyCheck.mjs HEAD upstream/main   # exit 0 clean, 1 review needed, 2 blocked
 git merge upstream/main
 ```
+
+`scripts/forkSafetyCheck.mjs` with `.github/fork-safety.json` is only a first pass: it flags things to read.
+It does not prove a change is safe.
 
 If the merge brings a removed plugin back, delete it again. Before pushing, look over any new
 plugins in `src/illegalcordplugins/`, especially new `native.ts` files and network calls.
