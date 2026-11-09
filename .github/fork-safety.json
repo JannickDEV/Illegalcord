@@ -24,6 +24,15 @@
         "src/illegalcordplugins/detectBlock/**",
         "src/illegalcordplugins/sendTrail/**"
     ],
+    "forkOwnedFiles": [
+        "README.md",
+        "README_IT.md",
+        "SECURITY.md",
+        "FORK_NOTES.md",
+        ".github/fork-safety.json",
+        "scripts/forkSafetyCheck.mjs",
+        ".github/workflows/build.yml"
+    ],
     "sensitivePaths": [
         "src/main/**",
         "src/preload.ts",

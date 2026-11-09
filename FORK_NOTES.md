@@ -26,6 +26,15 @@ Removed after a source review (2026-11-09, upstream commit `6f861c0`).
 **Surveillance of other users**
 - `Surveillance`, `stalker`, `OSINTToolkit` (sends looked-up user IDs to `api.cord.cat`), `presenceLab`
 
+## Fork-owned files
+
+These differ on purpose from upstream. On merge conflicts, keep the fork's version, and fold in upstream changes only
+where they still apply. The same list is `forkOwnedFiles` in `.github/fork-safety.json`.
+
+- `README.md`, `README_IT.md`, `SECURITY.md`: rewritten for this curated build. Upstream's describe the full Illegalcord.
+- `FORK_NOTES.md`, `.github/fork-safety.json`, `scripts/forkSafetyCheck.mjs`: the fork's own tooling
+- `.github/workflows/build.yml`: release condition and manual trigger, see below
+
 ## Other changes
 - `.github/workflows/build.yml`: the release upload runs unless the repository variable `ACT` is `true`.
   Upstream needed `ACT=false` to be set explicitly, so forks never published a release.

@@ -1,300 +1,126 @@
-# [<img src="./browser/Illegalcord.png" width="40" align="left" alt="Equicord">](https://github.com/Equicord/Equicord) Illegalcord
+# [<img src="./browser/Illegalcord.png" width="40" align="left" alt="Illegalcord">](https://github.com/JannickDEV/Illegalcord) Illegalcord (curated JannickDEV build)
 
-🌐 **Languages / Lingue:** [English](README.md) | [Italiano](README_IT.md)
+**A curated build of [Illegalcord](https://github.com/ImHisako/Illegalcord) with its most heavily rule-breaking and
+risky plugins removed, made to run inside [my Dorion build](https://github.com/JannickDEV/Dorion).**
 
-Security and abuse reports: [Reporting policy](SECURITY.md) · [Privacy Policy](PRIVACY_POLICY.md) · [Plugin and external component notes](#security-privacy-and-external-components). Private contacts: [illegalcord@secria.me](mailto:illegalcord@secria.me) and [@benedicence on Telegram](https://t.me/benedicence).
-
-Illegalcord is an open-source fork of [Equicord](https://github.com/Equicord) and [Vencord](https://github.com/Vendicated/Vencord), featuring more than 300 plugins. It is designed for users who value complete freedom in development, transparency, privacy, and customization.
-
-Originally created as a personal project, Illegalcord gradually gained popularity as more people discovered and appreciated its ideas and features. The client aims to provide more private communication through the SecurecordOpossum plugin and allows users to overcome Discord's upload limits by using external services such as [anon.li](https://anon.li/).
-
-If you are looking for a Discord client that offers greater privacy and more freedom in how you use it, Illegalcord may be the right choice for you. It also includes stereo audio support and provides better audio quality than Lightcord, with no hidden fees or closed-source components. The project is completely open source.
+> [!IMPORTANT]
+> This is an **unofficial, personal build** I share with friends. It is not made or supported by ImHisako
+> (Illegalcord), Equicord, Vencord or Discord. Don't report problems with it to those projects.
+> See [Reporting problems](#reporting-problems).
 
 > [!WARNING]
-> Illegalcord is sometimes labeled as malware simply because it does not enforce the same restrictions as other modified clients. Do not rely on assumptions: the project is fully open source, so you can inspect and verify the code yourself. If, after reviewing it, you consider it safe and suitable for your needs, you are free to install and use it.
+> **Every Discord client mod breaks Discord's [Terms of Service](https://discord.com/terms).** This build
+> removes the plugins most likely to get an account banned, which lowers the risk without removing it.
+> Use it at your own risk.
 
-Telegram and news: https://t.me/Illegalcord
+## How to use it
 
-Illegalcord website: https://illegalcord.netlify.app/
+You don't install this repository directly. **Install [Dorion (JannickDEV build)](https://github.com/JannickDEV/Dorion#setup)**
+and turn on **Illegalcord** under *Client Mods*. Dorion then downloads the latest `browser.js` from this repository's
+[`latest` release](https://github.com/JannickDEV/Illegalcord/releases/tag/latest) every time it starts, so you're
+always on the newest reviewed version without updating anything yourself.
 
-### Included Plugins
+The release is built by GitHub Actions from the source in this repository. Nothing in it was compiled or
+uploaded by hand.
 
-Our included plugins can be found [here](https://equicord.org/plugins).
+## Removed plugins
 
-### Added Plugins on Illegalcord
+These 22 plugins from upstream Illegalcord are **not** in this build:
+
+| Why | Plugins |
+|---|---|
+| **Downloaded or ran unverified programs or scripts** on your PC | GhostSelfbot (downloads and launches a selfbot `.exe`, and can hand it your token) · StereoInstaller (replaces Discord's voice engine with a modified binary from a third party) · FloeP2PService (`irm … \| iex` installer) · StatusCycler (`curl \| sh` installer, automatic status changes) · ShareClientConfig (importing someone's config could switch on risky settings) |
+| **High ban risk** (selfbot or automation behaviour) | NitroSniper · NitroSniper Nighty Ver · MassMention · AutoModBypass · DontLimitMe · ServerCloner · PlatformSpoofer · FakeMuteAndDeafen · BoosterCount · ClanSwitcher · MutualScanner · DetectBlock · SendTrail |
+| **Watching other people** | Surveillance · Stalker · OSINTToolkit · PresenceLab |
+
+The list, with reasons, is also kept in [FORK_NOTES.md](FORK_NOTES.md), and the daily safety check keeps these plugins out
+when upstream changes them.
+
+## What's included
+
+Everything from [Equicord's plugin list](https://equicord.org/plugins) (which includes Vencord's), plus these Illegalcord plugins:
+
 <details>
-<summary>Click to see the plugins added to Illegalcord</summary>
+<summary><b>Illegalcord plugins in this build</b></summary>
 
-- **Surveillance**: Experimental PoC dashboard for analyzing Discord events already visible to the user's client. Intended only for research, education, and authorized testing.
-- **MutualScanner**
-- **PresenceLab**
-- **SendTrail**
-- **DiscordHardened** True privacy experience on discord.
-- **FloeP2PService** | Based on Floe.one service the best P2P file sharing service.
-- **StereoInstaller** More Methods!
-- **FakeMuteAndDeafen**
-- **BetterMicrophone**
-- **BetterScreenshare**
-- **StaffDetector**
-- **AnonLi** | Bypass Discord limits for sharing files + Security & Privacy minded https://anon.li/
-- **Stalker**
-- **FastGifPicker**
-- **MassMention**
-- **WebRTCLeakPrevent**
-- **MultiInstance**
-- **IllegalcordAnnouncements**
-- **ConsoleCleaner**
-- **VoiceServerInfo**
-- **ClientDiagnostics**
-- **ClientIcon** | Custom window and shortcut icons on Windows and Linux.
-- **AutoModBypass**
-- **Securecord** | (AES 256 on messages)
-- **SecurecordOpossum** | BlazingOpossum, block size + IV + MAC Tag 128 bits, key 256 bits. Based on AVX2 instructions, highly-performant, post-quantum symmetric cryptographic algorithm. Advanced, and modern.  | https://github.com/ZygoteCode/BlazingOpossum )
-- **GhostSelfbot** | Launch Ghost Selfbot (exe or source) with auto-setup, Python requirements installer, and token management | https://ghostt.cc/
-- **IGP** ( pgp plugin )
-- **CustomDNS**
-- **DisableAnimations**
-- **ServerCloner**
-- **OpenOptimizer**
-- **1FA**
-- **FollowUser** (Without friends check, Follow everyone without limits)
-- **DontLimitMe**
-- **GatewayLogger**
-- **OSINTToolkit**
-- **LarpCord**
-- **Hisako's Optimizations**
-- **ScreenShareAlert**
-- **CrashHandlerEnhanced**
-- **SilentDelete**
-- **SilentEdit** | ( https://github.com/aurickk/SilentEdit-Vencord )
-- **BoostCounts** | ( https://github.com/Reathe/BoosterCount/tree/main )
-- **NitroSniper**: | ( https://github.com/neoarz/NitroSniper/tree/main )
-- **BadgeSelector** | ( https://github.com/002-sans/VencordPlugins/tree/b8c7c98a50c0700f7389b0484e5659fe5ec0f99e/BadgesSelector )
-- **CustomStreamTopQ** | ( https://github.com/MrTopQ/customStream-Vencord )
-- **TypingFriends** | ( https://github.com/debxylen/Vencord/tree/main/src/plugins/typingFriends )
-- **EmbeddedURLs** | ( https://github.com/ddadiani/Vencord-EmbeddedLinks/blob/main/src/plugins/embeddedURLs/index.ts )
-- **GpuBinder** | ( https://github.com/UnClide/vencord-gpubinder )
-- **StereoScreenshareAudio** | ( https://github.com/nerdwave-nick/Vencord-Stereo-Fix/blob/main/src/plugins/stereoScreenshareAudio/index.ts )
-- **DiscordLock** | ( https://github.com/vejcowski/DiscordLock/tree/main )
-- **OpSec** | ( We have a different version with italian support )
-- **PluginStars** | ( https://github.com/Nightwielder23/discord-plugin-stars )
-- **ServerBadges** | ( https://github.com/TomFront/ServerBadges )
-- **SilentGroupCall** | ( https://github.com/yahyepanna/Silent-call )
-- **ClanSwitcher**
-- **DetectBlock**
-- **ExpandedWidgets**
-- **IllegalcordDynamicIsland**
-- **IllegalcordEasterEgg**
-- **IllegalcordTutorial**
-- **IllegalMessageLogger**
-- **NightcordPort**
-- **NitroSniper Nighty Ver**
-- **PhilsPluginLibrary**
-- **PrivateSearchBrowser**
-- **RamOptimizer**
-- **ScamLinkDetector**
-- **SecureBookmarks**
-- **SecureZipper**
-- **ShareClientConfig**
-- **SoundPad**
-- **StatusCycler**
-- **StreamProofEnhanched**
-- **YMusicSync**
-- **ZeroWidthSanitizer**
+**Privacy and security**
+- **DiscordHardened**: blocks trackers, hardens Discord's settings, warns about dangerous attachments *(on by default)*
+- **StreamProofEnhanched**: hides sensitive chat content while you screen share *(on by default)*
+- **WebRTCLeakPrevent**: forces relay-only voice connections so peers can't see your IP
+- **ZeroWidthSanitizer**: strips invisible fingerprinting characters from messages
+- **ScamLinkDetector**: warns about known scam links (Discord AntiScam list)
+- **DiscordLock**: password-locks Discord on startup, after inactivity, or for chosen servers
+- **Securecord**, **SecurecordOpossum**, **IGP** (PGP): end-to-end encrypted messages between people who share a key
+- **SecureBookmarks**: encrypted message bookmarks
+
+**Voice, streaming and media**
+- **StereoScreenshareAudio**: stereo audio when watching streams
+- **ScreenShareAlert**: notifies you when someone in your voice channel starts sharing
+- **CustomStreamTopQ**: custom stream preview images
+- **SoundPad**: plays audio files through a virtual microphone (needs VB-Cable)
+- **FastGifPicker**, **EmbeddedURLs**: lighter GIF picker, embeddable social links
+
+**Quality of life**
+- **TypingFriends**, **FollowUser**, **SilentGroupCall**, **SilentEdit**, **SilentDelete**, **OpSec** (autocorrect), **PluginStars**
+- **IllegalMessageLogger**: keeps deleted and edited messages
+- **StaffDetector**: highlights Discord staff in voice channels
+- **ConsoleCleaner**, **DisableAnimations**, **Hisako's Optimizations**, **OpenOptimizer**, **GatewayLogger**
+
+**Cosmetic (only you see these)**
+- **LarpCord**, **BadgeSelector**, **ServerBadges**, **ExpandedWidgets**, **IllegalcordEasterEgg**, **GhostClient**, **1FA**
+
+**Illegalcord itself**
+- **IllegalcordTutorial**, **IllegalcordAnnouncements**, **NightcordPort**, **CrashHandlerEnhanced**
+
+**Desktop-only.** These are in the source, but have no effect in Dorion because they need native (system-level) code:
+AnonLi, ClientDiagnostics, ClientIcon, ConfigEditor, CustomDNS, GpuBinder, IllegalcordDynamicIsland, MultiInstance
+(use Dorion profiles instead), PrivateSearchBrowser, RamOptimizer, SecureZipper, SoundcloudRPC, VoiceServerInfo, YMusicSync,
+BetterMicrophone, BetterScreenshare.
 
 </details>
 
-Illegalcord has his personal badges btw
+## Safety and risks
 
-## Installing Illegalcord
+**Review.** Upstream Illegalcord was reviewed before this build was made. Every use of the Discord token, every
+network request, all native code and every shipped binary were checked. No malware, token stealing or hidden
+upload was found in Illegalcord's own code. What made it risky were plugins that download and run other projects'
+programs, or that exist to break Discord's rules. Those are gone.
 
-### Windows
+**Still worth knowing:**
+- Some included plugins still change Discord's behaviour (SilentDelete, SilentEdit, SilentGroupCall, FollowUser, GhostClient).
+  They're common and low-risk, but not risk-free.
+- Message loggers keep things other people chose to delete. Please respect that.
+- When Discord starts, badge lists are downloaded from GitHub (ImHisako's repo) and `api.nightcord.st`. Those
+  hosts see your IP address. Equicord and Vencord do the same with their own badge services. Plugins you turn on may
+  talk to the service they're built for, for example VoiceServerInfo, which looks up the voice server's location.
 
-| | X64 | ARM64 |
-| --- | --- | --- |
-| GUI | [Download](https://github.com/ImHisako/IllegalcordInstaller/releases/latest/download/Illegalotl.exe) | [Download](https://github.com/ImHisako/IllegalcordInstaller/releases/latest/download/Illegalotl-arm64.exe) |
-| CLI | [Download](https://github.com/ImHisako/IllegalcordInstaller/releases/latest/download/IllegalotlCli.exe) | [Download](https://github.com/ImHisako/IllegalcordInstaller/releases/latest/download/IllegalotlCli-arm64.exe) |
+**Daily update check.** Once a day an automated Claude session (AI-assisted, on my account) fetches upstream Illegalcord
+and runs [`scripts/forkSafetyCheck.mjs`](scripts/forkSafetyCheck.mjs). It then reads every flagged change and every new
+plugin, and merges only when nothing unsafe was found. New rule-breaking plugins are removed before merging. If
+anything is unclear, nothing is merged and I review it myself. It's a strong filter, not a guarantee.
 
-### macOS
+## Reporting problems
 
-Prebuilt macOS installers are not currently available. Check the [IllegalcordInstaller releases](https://github.com/ImHisako/IllegalcordInstaller/releases) for updates.
+Open an issue here, or message me (JannickDEV) directly. **Report security problems privately**, not in public.
+Never send anyone your Discord token or password, and nobody legitimate will ask for them. See [SECURITY.md](SECURITY.md).
 
-### Linux
+## For developers
 
-| | X64 | ARM64 |
-| --- | --- | --- |
-| Combined GUI | [Download](https://github.com/ImHisako/IllegalcordInstaller/releases/latest/download/Illegalotl) | [Download](https://github.com/ImHisako/IllegalcordInstaller/releases/latest/download/Illegalotl-arm64) |
-| X11 GUI | [Download](https://github.com/ImHisako/IllegalcordInstaller/releases/latest/download/Illegalotl-x11) | [Download](https://github.com/ImHisako/IllegalcordInstaller/releases/latest/download/Illegalotl-x11-arm64) |
-| Wayland GUI | [Download](https://github.com/ImHisako/IllegalcordInstaller/releases/latest/download/Illegalotl-wayland) | [Download](https://github.com/ImHisako/IllegalcordInstaller/releases/latest/download/Illegalotl-wayland-arm64) |
-| CLI | [Download](https://github.com/ImHisako/IllegalcordInstaller/releases/latest/download/IllegalotlCli-linux) | [Download](https://github.com/ImHisako/IllegalcordInstaller/releases/latest/download/IllegalotlCli-linux-arm64) |
-
-Run `chmod +x <file>` after downloading, then execute the installer.
-
-## Installing Illegalcord Devbuild
-
-### Dependencies
-
-Installer : https://github.com/ImHisako/IllegalcordInstaller
-
-[Git](https://git-scm.com/download) and [Node.JS LTS](https://nodejs.dev/en/) are required.
-
-Install `pnpm`:
-
-> :exclamation: This next command may need to be run as admin/root depending on your system, and you may need to close and reopen your terminal for pnpm to be in your PATH.
-
-```shell
-npm i -g pnpm
-```
-
-> :exclamation: **IMPORTANT** Make sure you aren't using an admin/root terminal from here onwards. It **will** mess up your Discord/Illegalcord instance and you **will** most likely have to reinstall.
-
-Clone Illegalcord:
-
-```shell
-git clone https://github.com/ImHisako/Illegalcord
-cd Illegalcord
-```
-
-Install dependencies:
-
-```shell
-pnpm install --frozen-lockfile
-```
-
-Build Illegalcord:
-
-```shell
-pnpm build
-```
-
-Inject Illegalcord into your desktop client:
-
-```shell
-pnpm inject
-```
-
-Build Illegalcord for web:
-
-```shell
-pnpm buildWeb
-```
-
-After building Illegalcord's web extension, locate the appropriate ZIP file in the `dist` directory and follow your browser’s guide for installing custom extensions, if supported.
-
-Note: Firefox extension zip requires Firefox for developers
+Building works as described in upstream's README: `pnpm install --frozen-lockfile`, then `pnpm buildWeb`. The browser bundle is
+written to `dist/browser/`. [FORK_NOTES.md](FORK_NOTES.md) lists every change compared with upstream and how to sync manually.
 
 ## Credits
 
-- [thororen1234](https://github.com/thororen1234) For Creating [Equicord](https://github.com/Equicord)
+- [ImHisako](https://github.com/ImHisako) and contributors for [Illegalcord](https://github.com/ImHisako/Illegalcord)
+- [thororen1234](https://github.com/thororen1234) for creating [Equicord](https://github.com/Equicord)
 - [Vendicated](https://github.com/Vendicated) for creating [Vencord](https://github.com/Vendicated/Vencord)
 - [verticalsync](https://github.com/verticalsync) for creating [Suncord](https://github.com/verticalsync/Suncord)
-- [clrxxo ](https://github.com/clrxxo) for creating [Kamidere](https://github.com/clrxxo/Kamidere)
-- [Nightcord](https://nightcord.ru/) For the ideas and the foundation of some plugins.
+- [clrxxo](https://github.com/clrxxo) for creating [Kamidere](https://github.com/clrxxo/Kamidere)
+- [Nightcord](https://nightcord.st/) for the ideas and foundations of several plugins
+- The authors of the individual plugins, credited in each plugin's source
 
-## Special Thanks
+## License
 
-We are proudly partnered with [Nightcord](https://nightcord.st/).
-Their ideas, design choices, and pieces of their code have been directly integrated into the development philosophy of Illegalcord, influencing several plugins and features.
-This partnership has been more than a name: it has been a concrete contribution to the direction and quality of this client.
+GNU GPL v3, same as upstream. See [LICENSE](LICENSE). The full source of every build is in this repository.
 
-## Security, privacy, and external components
-
-> [!WARNING]
-> Bundled features include batch messaging, moderation evasion, user monitoring, OSINT and breach-data lookups, automated gift redemption, and credential-related integrations. Public source code and a PoC label do not certify software safety or guarantee protection from account suspension.
-
-Depending on enabled plugins and settings, the client can process Discord data locally or send data to other providers. Read the [Privacy Policy](PRIVACY_POLICY.md) and [Security and abuse reporting policy](SECURITY.md) before enabling sensitive features.
-
-### External programs and native modules
-
-**StereoInstaller** includes a compiled `discord_voice.node` module and can download replacement voice modules from an independent project. **GhostSelfbot** downloads and launches an external executable or Python source, can install Python requirements, and optionally writes the current Discord token into local Ghost configuration files. Ghost's subsequent execution and network behavior are separate from that local configuration step. Other optional integrations, such as the Spicetify installer in StatusCycler, also download and run external software.
-
-Treat each native module and downloaded program as a separate trust decision. Review its source, version, integrity, and distribution rights before installation; do not assume that a binary matches the code shown in this repository. The [security reporting contacts](SECURITY.md#private-contacts) accept reports about suspicious downloads and integrations as well as vulnerabilities in the client.
-
-Introductory statements about source availability refer to code published in this repository: including a compiled module or linking an external project does not establish its safety, license, or correspondence to the available source. Statements about ban risk are not a verified estimate of enforcement probability or a guarantee about how Discord will treat an account.
-
-### Plugin behavior and security notes
-
-- **MutualScanner** | Requests server member and user profile data to find mutual friends and saves results locally.
-- **SendTrail** | Tracks your newly sent messages locally and lets you select and delete them.
-- **DiscordHardened** | Controls selected network requests, permissions, and Electron security settings. It does not make Discord anonymous.
-- **FloeP2PService** | Shares files through the external Floe CLI.
-- **StereoInstaller** | Installs or reverts voice module replacements using a bundled native binary or downloads from independent projects.
-- **FakeMuteAndDeafen** | Changes outgoing mute and deafen indicators while audio can remain active.
-- **AnonLi** | Uploads encrypted files to [Anon.li](https://anon.li/) and shares links through Discord.
-- **Stalker** | Tracks selected users' visible presence, activity, voice, and message events, with optional local logs.
-- **MassMention** | Sends batches of real user mentions, potentially covering all members loaded by the client.
-- **AutoModBypass** | Transforms outgoing text using alternate Unicode characters, including modes intended to evade AutoMod.
-- **SecurecordOpossum** | Experimental message encryption based on [BlazingOpossum](https://github.com/ZygoteCode/BlazingOpossum). Inclusion does not establish an independent cryptographic security audit.
-- **GhostSelfbot** | Downloads and launches the external [Ghost selfbot](https://ghostt.cc/), with optional writing of your Discord token to local Ghost files. The plugin and token auto-fill are disabled by default.
-- **1FA** | Hides Discord's moderation warning about two-factor authentication. It does not disable authentication requirements.
-- **FollowUser** | Automatically follows a selected user between visible voice channels your account can join.
-- **DontLimitMe** | Enlarges the local message queue. It does not remove Discord's server-side rate limits and can facilitate spam.
-- **OSINTToolkit** | Sends lookups to external services, including CordCat and GeoSeeer. Results can contain sensitive personal or breach data.
-- **NitroSniper** | Automatically attempts to redeem gift links, with optional third-party CAPTCHA solving, proxy, and webhook integrations. [Original project](https://github.com/neoarz/NitroSniper/tree/main).
-- **IllegalMessageLogger** | Persistently stores deleted and edited messages locally. Time-based retention is unlimited by default, with a separate message-count limit.
-- **NitroSniper Nighty Ver** | Automatically attempts to redeem gift links from received messages and can send results to a configured webhook.
-
-## Disclaimer
-
-Discord is a trademark of Discord Inc. and is mentioned solely for descriptive purposes.
-Its mention does not imply any affiliation with or endorsement by Discord Inc.
-Vencord is not affiliated with Equicord or Illegalcord.
-
-### Legal Status, Project-Wide PoC, and Responsible Use
-
-> [!IMPORTANT]
-> **Illegalcord as a whole, including every bundled plugin and not only OSINTToolkit, Surveillance, and Stalker, is published as an experimental proof of concept (PoC).** Its intended purposes are research, education, interoperability, privacy, customization, and authorized security testing. The PoC label describes the project's intended scope; it is not a legal exemption and does not make every possible use lawful.
-
-Illegalcord is not presented as malware or as software intended to facilitate crime. The project name and the presence of advanced or dual-use features do not, by themselves, determine the software's legal status. However, no maintainer can guarantee that the client, every plugin, or every use is lawful in every jurisdiction. Legality depends on the feature used, the user's conduct, authorization or consent, the data involved, local law, and platform rules. This section is general information, not legal advice.
-
-Use Illegalcord only with accounts, systems, servers, communications, and data that you own or are explicitly authorized to access and analyze. Public availability of information does not automatically remove privacy or data-protection obligations. Illegalcord must not be used for unauthorized access or interception, credential or token acquisition or sharing, evasion of safety or age controls, spam, harassment, doxxing, stalking, unauthorized profiling or data collection, fraud, copyright infringement, or any other illegal or abusive activity.
-
-#### Privacy, local storage, and third-party services
-
-Illegalcord is client software, but it is not accurate to assume that every operation remains solely inside Discord or that no personal data is processed. Depending on the plugins and settings enabled, the client may read data already available to the Discord client, store settings, identifiers, logs, and optional message previews locally, or transmit identifiers, search terms, files, request metadata, webhook content, or other user-selected data to independent services. See the project [Privacy Policy](PRIVACY_POLICY.md) before enabling plugins that process or transmit data.
-
-**OSINTToolkit interacts with independent third-party services, including CordCat and GeoSeeer.** Requests can disclose the searched Discord identifier or other search term and technical request metadata such as the user's IP address. CordCat states that it retains lookup and request information under its own policy and may query a private breach-data aggregator. Other optional plugins may contact upload providers, webhook endpoints, CAPTCHA services, content databases, or other APIs. These providers operate under their own terms, privacy notices, security measures, and retention periods; Illegalcord does not control their processing and cannot delete data held by them.
-
-Before sending personal data to any service, the user must identify a lawful and specific purpose, determine an appropriate legal basis, disclose the processing to affected people where required, minimize the submitted data, set a proportionate retention period, protect locally stored files, and respect rights of access, objection, rectification, and erasure. Do not submit data about minors, special-category data, credentials, private communications, or breach records unless the processing is strictly necessary, legally permitted, and appropriately protected. Public availability, an OSINT label, or a third party's privacy policy is not by itself proof that reuse is lawful. Do not make decisions that significantly affect a person solely from unverified OSINT or breach results. Review the [CordCat Privacy Policy](https://cord.cat/privacy/), [CordCat Terms](https://cord.cat/terms/), and the policies of every other service before use. Illegalcord does not certify their GDPR compliance or the accuracy, lawfulness, currency, or provenance of their data.
-
-#### Sensitive plugins and criminal-use boundaries
-
-Some bundled features are particularly sensitive, including OSINTToolkit, Surveillance, Stalker, GhostSelfbot, MassMention, AutoModBypass, NsfwGateBypass, message loggers, token-related tools, snipers, account automation, and similar plugins. Token-related cases include **GhostSelfbot** (optionally reads the current Discord account token and writes it to Ghost configuration and token files so the launched external selfbot can authenticate), **ClanSwitcher** (reads the current Discord token in memory to authorize direct Discord API requests that change the active clan), **BoosterCount/showBoostCounts** (reads the token in memory to request guild booster data directly from Discord), and **NoDevtoolsWarning** (does not itself retrieve or transmit the token, but disables Discord's console protection that hides it, making accidental exposure through developer tools more likely). They remain part of the project-wide experimental PoC, but that label does not authorize their use against other people or outside platform rules. They must remain disabled unless the user understands their operation and has the required authorization and lawful basis.
-
-- Use monitoring and logging only on your own account or in an expressly authorized moderation, research, or security context. Collect only necessary events, avoid message previews unless essential, restrict access, define a short retention period, and securely delete exported logs when no longer needed. Never use them to follow, intimidate, profile, dox, or harass a person.
-- Never obtain, import, use, export, publish, or transmit another person's token, password, session, API key, or webhook credential. Even your own Discord token is a high-risk secret: do not share it and do not enable a feature that writes it to a file unless you fully accept the security and account risks.
-- Do not use selfbots or automation to spam, mass mention, scrape, evade rate limits, claim benefits unfairly, impersonate users, or bypass moderation, safety, age, access, or content controls. Authorization to test must come from the owner of the affected account or system and does not override Discord's rules.
-- Do not treat data returned by OSINT or breach services as verified fact. Do not use it for stalking, credential attacks, discrimination, public accusations, or decisions affecting employment, access, reputation, safety, or legal rights.
-
-Here, “token” does not always mean the Discord account token. FileUpload uses credentials for user-configured upload providers such as Zipline or Nest; Anon.li Drop uses an Anon.li API key; YMusicSync uses a Yandex Music OAuth token; and plugins such as NitroSniper, ReviewDB, Decor, SongSpotlight, Streaks, ThemeLibrary, or TriviaAI can use service-specific API, OAuth, or session tokens for their respective integrations. Those credentials do not provide access to the Discord account unless a service or plugin explicitly uses the Discord account token, but they must still be protected and may be transmitted to the named provider for authentication. This list describes the integrations present at the time of writing and must be rechecked when plugins change.
-
-Criminal liability depends on the concrete conduct, intent, authorization, and surrounding facts; merely naming or including a dual-use feature does not by itself establish a crime. However, unauthorized entry into a protected system or remaining there against the right holder's will may fall under Article 615-ter of the Italian Criminal Code; unlawful procurement, possession, production, or distribution of access credentials for an illicit purpose may fall under Article 615-quater; fraudulent interception, prevention, or interruption of electronic communications may fall under Article 617-quater; and repeated threats or harassment producing the statutory consequences may fall under Article 612-bis. Use of one's own account or receipt of events normally delivered to one's own client is not automatically equivalent to these offences, but it may still breach contracts, privacy law, or other rules. Only the competent authorities and courts can determine whether a specific case satisfies an offence. The current consolidated text is available on [Normattiva](https://www.normattiva.it/eli/id/1930/10/26/030U1398/CONSOLIDATED).
-
-Relevant official sources include:
-
-- The [GNU GPL-3.0-or-later license](LICENSE), which governs copying, modification, and distribution of this project but does not authorize unlawful conduct.
-- The [EU General Data Protection Regulation](https://eur-lex.europa.eu/eli/reg/2016/679/oj), especially Articles 4, 5, 6, 12-14, 25, and 32 on personal data, lawful processing, transparency, data minimization, privacy by design, and security.
-- The Italian [Personal Data Protection Authority's guide to lawful processing](https://www.garanteprivacy.it/home/principi-fondamentali-del-trattamento).
-- The Italian [Criminal Code on Normattiva](https://www.normattiva.it/eli/id/1930/10/26/030U1398/CONSOLIDATED), including, where applicable to the actual conduct, Articles 612-bis, 615-ter, 615-quater, and 617-quater concerning stalking, unauthorized system access, access credentials, and unlawful interception of electronic communications.
-- [Discord's Terms of Service](https://discord.com/terms), [Platform Manipulation Policy](https://discord.com/safety/platform-manipulation-policy-explainer-oct-2023), and [official self-bot policy](https://support.discord.com/hc/en-us/articles/115002192352-Automated-User-Accounts-Self-Bots).
-
-Discord prohibits client modifications and automation of normal user accounts outside its bot API. This platform or contractual restriction is distinct from a criminal-law determination, but violations may still result in account suspension or termination. The maintainers and contributors do not endorse illegal use and cannot accept responsibility for misuse by third parties.
-
-> [!WARNING]
-> **The name Illegalcord does not make the client illegal by itself.** The word **"Illegal"** is only part of the project's name and does not determine the software's legal status.
-> The name refers to the idea of a Discord client without the limitations and rules typically imposed by other modded clients, similar to the customization philosophy of Equicord and Vencord.
-> However, using modified clients can still violate Discord's Terms of Service, so they should be used with caution.
-> Illegal use falls outside the project's intended scope. Responsibility is determined by applicable law and cannot be excluded merely by this disclaimer.
-
-<details>
-<summary>Using Illegalcord violates Discord's terms of service</summary>
-
-Client modifications are against Discord’s Terms of Service.
-
-Discord expressly prohibits client modifications and self-bots. In practice, enforcement against ordinary, non-abusive client-mod use is generally considered uncommon, so most users regard the ban risk as low. It is not zero, however, and this project cannot guarantee that an account will remain unaffected. Plugins that automate accounts, spam, bypass safeguards, or otherwise enable abusive behavior carry a substantially higher risk.
-
-Regardless, if your account is essential to you and getting disabled would be a disaster for you, you should probably not use any client mods (not exclusive to Equicord / Illegalcord), just to be safe.
-
-Additionally, make sure not to post screenshots with Illegalcord in a server where you might get banned for it.
-
-</details>
+Not affiliated with or endorsed by Discord Inc.

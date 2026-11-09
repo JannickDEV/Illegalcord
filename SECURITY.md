@@ -1,38 +1,30 @@
-# Security and abuse reporting
+# Security
 
-Use the private contacts below to report vulnerabilities, suspected malicious code or downloads, exposed credentials, privacy violations, or abusive uses of Illegalcord. Reports in English or Italian are welcome.
+This repository is a curated, unofficial build of [Illegalcord](https://github.com/ImHisako/Illegalcord), maintained by
+JannickDEV for personal use and for friends. It is loaded by [Dorion (JannickDEV build)](https://github.com/JannickDEV/Dorion).
 
-## Private contacts
+## Reporting a problem with this build
 
-- Email: [illegalcord@secria.me](mailto:illegalcord@secria.me).
-- Telegram: [@benedicence](https://t.me/benedicence).
+Message JannickDEV **privately**. Don't put security details in a public issue. Examples of what to report:
+- a plugin or file that seems to send data somewhere it shouldn't
+- a download from these repositories that your antivirus flags, or that differs from what the source suggests
+- a plugin that should have been removed (see [README](README.md#removed-plugins)) but is still active
 
-Send sensitive reports directly to these contacts. Do not publish them in public issues, pull requests, Telegram groups, or support channels. Never send live tokens, passwords, API keys, webhook credentials, private message archives, or unredacted personal data. If a credential has been exposed, revoke or rotate it through the relevant provider.
+Include the plugin name, what you saw and when. **Never include your Discord token, password, or private messages.**
+If you think your token leaked, change your Discord password, which signs out every session and invalidates the token.
 
-## What to include
+## Problems that come from upstream
 
-- The affected Illegalcord version or commit, operating system, client type, plugin, and relevant settings.
-- A description of the vulnerability or abuse, its impact, and the affected code or download URL.
-- Minimal reproduction steps using accounts, systems, and data you own or are authorized to test. Do not attack other users or services to demonstrate a problem.
-- Redacted logs, screenshots, or a minimal example containing synthetic data where possible.
-- For a suspicious download, its origin, version, download date, and file hash if available. Do not run a suspected malicious file to prepare a report.
+If the problem is in Illegalcord's own code and not specific to this build, also report it to the Illegalcord maintainers
+through the contacts in [upstream's SECURITY.md](https://github.com/ImHisako/Illegalcord/blob/main/SECURITY.md).
 
-For abuse reports, provide the minimum evidence needed to identify the affected content or conduct. Avoid forwarding another person's private information or an executable as an initial attachment; describe the evidence first so a suitable way to share it can be agreed.
+## How this build is kept safe
 
-## Assessment and mitigation
+- 22 upstream plugins that ran external programs, carried a high ban risk, or monitored other users are removed
+  ([FORK_NOTES.md](FORK_NOTES.md)).
+- Every day, new upstream changes are scanned by [`scripts/forkSafetyCheck.mjs`](scripts/forkSafetyCheck.mjs) and
+  reviewed in an automated Claude session before anything is merged. Unclear changes are not merged.
+- Releases are built only by GitHub Actions from this repository's source.
 
-Maintainers assess reports and may request clarification. Depending on the findings, mitigation can include fixing code, disabling affected features or downloads, correcting documentation, or removing harmful hosted content. Response and resolution times depend on maintainer availability and the scope of the problem; no fixed deadline is guaranteed.
-
-Please coordinate public disclosure while a vulnerability is being assessed and addressed. Published fixes or advisories should omit credentials and unnecessary personal data. Reporting here does not prevent you from reporting abuse directly to GitHub, another affected provider, or the appropriate authorities.
-
-## Scope and external components
-
-Include issues affecting the current source, distributed builds, and integrations that download or launch external software. Reports about older versions are also useful when the problem may remain in current versions; including them does not imply that every older release is supported.
-
-Some plugins include compiled native modules or obtain programs from independent projects. Their behavior and source correspondence require separate review. Report a suspected problem with the Illegalcord integration here and, where appropriate, notify the upstream provider through its own security contact. Do not assume an external executable is safe because the integration source is public.
-
-## Responsible use
-
-Illegalcord is intended for customization, interoperability, privacy experimentation, education, and authorized research. The project does not endorse malware distribution, unlawful attacks, credential theft, spam, harassment, doxxing, or unauthorized monitoring. The experimental PoC designation and disclaimers do not authorize abuse, replace technical safeguards, or guarantee compliance with a hosting provider's policies.
-
-See the [README](README.md#disclaimer), [Italian README](README_IT.md#dichiarazione-di-non-responsabilità), and [Privacy Policy](PRIVACY_POLICY.md) for feature-specific risks and data handling. GitHub's [Acceptable Use Policies](https://docs.github.com/en/site-policy/acceptable-use-policies/github-acceptable-use-policies) and [Active Malware or Exploits policy](https://docs.github.com/en/site-policy/acceptable-use-policies/github-active-malware-or-exploits) apply to content hosted on GitHub.
+No review process is perfect. Treat this build like any other third-party software, and use it on an account you can
+afford to lose.
