@@ -64,7 +64,7 @@ jobs:
                   rm release/*.map
 
             - name: Upload Illegalcord Stable
-              if: ${{ vars.ACT == 'false' }}
+              if: ${{ vars.ACT != 'true' }}
               env:
                   GH_TOKEN: ${{ github.token }}
               run: |
