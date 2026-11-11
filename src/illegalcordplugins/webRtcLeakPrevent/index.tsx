@@ -78,11 +78,11 @@ function createPatchedConnection(
 export const settings = definePluginSettings({
     icePolicy: {
         type: OptionType.SELECT,
-        default: "relay",
+        default: "all", // JannickDEV fork: relay-only breaks voice in Dorion (browser WebRTC)
         description: "ICE transport policy. Relay forces TURN relay only (best privacy), public allows public IP discovery.",
         options: [
-            { label: "Relay Only (Best Privacy)", value: "relay", default: true },
-            { label: "Public (Default Discord)", value: "all" },
+            { label: "Relay Only (Best Privacy)", value: "relay" },
+            { label: "Public (Default Discord)", value: "all", default: true },
         ],
     },
     enableLogs: {

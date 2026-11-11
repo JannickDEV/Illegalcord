@@ -32,7 +32,9 @@
         ".github/fork-safety.json",
         "scripts/forkSafetyCheck.mjs",
         ".github/workflows/build.yml",
-        "browser/VencordNativeStub.ts"
+        "browser/VencordNativeStub.ts",
+        "src/illegalcordplugins/DiscordHardened/index.ts",
+        "src/illegalcordplugins/webRtcLeakPrevent/index.tsx"
     ],
     "sensitivePaths": [
         "src/main/**",

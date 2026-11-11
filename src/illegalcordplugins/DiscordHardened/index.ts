@@ -300,7 +300,7 @@ export const settings = definePluginSettings({
     privatePushToTalk: {
         type: OptionType.BOOLEAN,
         description: "Keep microphone tracks physically disabled unless push-to-talk is actively pressed.",
-        default: true,
+        default: false,
         onChange: refreshMicrophonePrivacy,
     },
     lockMicrophoneWhenMuted: {
@@ -347,12 +347,12 @@ export const settings = definePluginSettings({
     allowDeviceEnumeration: {
         type: OptionType.BOOLEAN,
         description: "Allow web content to list all media devices. Permitted cameras and microphones remain visible so they can be used.",
-        default: false,
+        default: true,
     },
     allowSpeakerSelection: {
         type: OptionType.BOOLEAN,
         description: "Allow web content to request access to an audio output device.",
-        default: false,
+        default: true,
     },
     blockNotifications: {
         type: OptionType.BOOLEAN,

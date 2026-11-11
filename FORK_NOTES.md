@@ -35,6 +35,11 @@ where they still apply. The same list is `forkOwnedFiles` in `.github/fork-safet
 - `FORK_NOTES.md`, `.github/fork-safety.json`, `scripts/forkSafetyCheck.mjs`: the fork's own tooling
 - `.github/workflows/build.yml`: release condition and manual trigger, see below
 - `browser/VencordNativeStub.ts`: the browser build reports `JannickDEV/Illegalcord` as its repository (Changelog page)
+- `DiscordHardened/index.ts`, `webRtcLeakPrevent/index.tsx`: defaults changed so voice works in Dorion, where Discord
+  uses the browser's WebRTC instead of the desktop voice engine. Device listing and speaker selection are allowed
+  (otherwise "No Output Devices"), private push-to-talk is off (it kept the mic silent), and WebRTCLeakPrevent uses
+  "Public (Default Discord)" (relay-only never connects, so calls stay on "RTC Connecting"). Only the defaults
+  changed: anyone who already set these keeps their own values.
 
 ## Other changes
 - `.github/workflows/build.yml`: the release upload runs unless the repository variable `ACT` is `true`.
