@@ -23,6 +23,9 @@ Removed after a source review (2026-11-09, upstream commit `6f861c0`).
 - `mutualScanner`, `detectBlock`: automated background profile and member fetching
 - `sendTrail`: bulk-deletes messages through the API
 
+**Tests for removed plugins**
+- `scripts/tests/sendTrail.test.mjs`: only tests the removed SendTrail plugin
+
 **Surveillance of other users**
 - `Surveillance`, `stalker`, `OSINTToolkit` (sends looked-up user IDs to `api.cord.cat`), `presenceLab`
 

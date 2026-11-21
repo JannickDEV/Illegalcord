@@ -22,7 +22,8 @@
         "src/illegalcordplugins/OSINTToolkit/**",
         "src/illegalcordplugins/presenceLab/**",
         "src/illegalcordplugins/detectBlock/**",
-        "src/illegalcordplugins/sendTrail/**"
+        "src/illegalcordplugins/sendTrail/**",
+        "scripts/tests/sendTrail.test.mjs"
     ],
     "forkOwnedFiles": [
         "README.md",
