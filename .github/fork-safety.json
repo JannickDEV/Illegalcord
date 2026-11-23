@@ -23,7 +23,8 @@
         "src/illegalcordplugins/presenceLab/**",
         "src/illegalcordplugins/detectBlock/**",
         "src/illegalcordplugins/sendTrail/**",
-        "scripts/tests/sendTrail.test.mjs"
+        "scripts/tests/sendTrail.test.mjs",
+        "scripts/tests/fakeMuteAndDeafen.test.mjs"
     ],
     "forkOwnedFiles": [
         "README.md",

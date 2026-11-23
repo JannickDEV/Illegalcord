@@ -25,6 +25,7 @@ Removed after a source review (2026-11-09, upstream commit `6f861c0`).
 
 **Tests for removed plugins**
 - `scripts/tests/sendTrail.test.mjs`: only tests the removed SendTrail plugin
+- `scripts/tests/fakeMuteAndDeafen.test.mjs`: only tests the removed FakeMuteAndDeafen plugin
 
 **Surveillance of other users**
 - `Surveillance`, `stalker`, `OSINTToolkit` (sends looked-up user IDs to `api.cord.cat`), `presenceLab`
