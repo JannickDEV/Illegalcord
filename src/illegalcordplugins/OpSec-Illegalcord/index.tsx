@@ -285,7 +285,8 @@ const punctuationRules: ReplacementRule[] = [
     { pattern: /!!+/g, replacement: "!" },
     { pattern: /\?\?+/g, replacement: "?" },
     { pattern: /,,+/g, replacement: "," },
-    { pattern: /\s+([.!?,;:])/g, replacement: "$1" },
+    // Keep the space before emoticons such as ":=)", ":)", ":D" or ";-P"
+    { pattern: /\s+([.!?,;:])(?![-=^']?[()[\]{}DPpOo3|/\\*<>@$])/g, replacement: "$1" },
     { pattern: /([([{])\s+/g, replacement: "$1" },
     { pattern: /\s+([)\]}])/g, replacement: "$1" },
 ];
@@ -386,7 +387,14 @@ function applyRules(text: string, rules: ReplacementRule[]) {
     let result = text;
 
     for (const { pattern, replacement } of rules) {
-        result = result.replace(pattern, (match: string) => preserveCase(match, replacement));
+        result = result.replace(pattern, (match: string, ...groups: unknown[]) => {
+            // A replacer function's return value is used literally, so expand $1-$9 here
+            const expanded = replacement.replace(/\$(\d)/g, (_: string, index: string) => {
+                const group = groups[Number(index) - 1];
+                return typeof group === "string" ? group : "";
+            });
+            return preserveCase(match, expanded);
+        });
     }
 
     return result;

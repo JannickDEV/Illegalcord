@@ -45,6 +45,10 @@ where they still apply. The same list is `forkOwnedFiles` in `.github/fork-safet
   "Public (Default Discord)" (relay-only never connects, so calls stay on "RTC Connecting"). Only the defaults
   changed: anyone who already set these keeps their own values.
 
+- `OpSec-Illegalcord/index.tsx`: bug fix. Its punctuation rules returned a literal "$1" (a replacer function's return
+  value isn't $-expanded), turning `nice :=)` into `nice$1=)`. Capture groups are now expanded, and the space before
+  emoticons like `:=)`, `:)` or `;-P` is kept.
+
 ## Other changes
 - `.github/workflows/build.yml`: the release upload runs unless the repository variable `ACT` is `true`.
   Upstream needed `ACT=false` to be set explicitly, so forks never published a release.

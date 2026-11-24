@@ -36,7 +36,8 @@
         ".github/workflows/build.yml",
         "browser/VencordNativeStub.ts",
         "src/illegalcordplugins/DiscordHardened/index.ts",
-        "src/illegalcordplugins/webRtcLeakPrevent/index.tsx"
+        "src/illegalcordplugins/webRtcLeakPrevent/index.tsx",
+        "src/illegalcordplugins/OpSec-Illegalcord/index.tsx"
     ],
     "sensitivePaths": [
         "src/main/**",
